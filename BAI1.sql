@@ -21,6 +21,7 @@ CREATE TABLE Books (
     publish_year YEAR NOT NULL,
     
     -- RÀNG BUỘC
+    CONSTRAINT PK_Books PRIMARY KEY(book_id),
     CONSTRAINT FK_Books FOREIGN KEY(author_id) REFERENCES authors(author_id) ON DELETE CASCADE,
     CONSTRAINT CK_Books CHECK(price >= 0)
 );
@@ -33,6 +34,6 @@ CREATE TABLE customers (
     registration_date TIMESTAMP NOT NULL DEFAULT(CURRENT_TIMESTAMP),
     
     CONSTRAINT PK_customers PRIMARY KEY(customer_id),
-    CONSTRAINT UQ_customers UNIQUE(email),
-    CONSTRAINT UQ_customers UNIQUE(phone)
+    CONSTRAINT UQ_customers_email UNIQUE(email),
+    CONSTRAINT UQ_customers_phone UNIQUE(phone)
 );
