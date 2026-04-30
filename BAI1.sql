@@ -37,3 +37,5 @@ CREATE TABLE customers (
     CONSTRAINT UQ_customers_email UNIQUE(email),
     CONSTRAINT UQ_customers_phone UNIQUE(phone)
 );
+
+
